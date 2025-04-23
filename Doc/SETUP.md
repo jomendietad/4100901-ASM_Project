@@ -23,8 +23,10 @@ El código base ya está disponible en un repositorio que compartiré contigo. S
 2. Pulsa STM32 Extension (barra izquierda) y ejecuta el comando **Create Empty Project**.
 3. Usa el mismo nombre del repositorio clonado `4100901-ASM_Project` y selecciona la carpeta que acabaste de clonar
 4. Selecciona `BOARD` y luego el modelo `NUCLEO‑L476RG`.
-4. Pulsa **Create project** y *Open this window*. Esto generará un `CMakeLists.txt` básico y la estructura de carpetas (`Src/`, `Inc/`).
+4. Pulsa **Create project** y *Open this window*. Esto generará un `CMakeLists.txt`, un `stm32l476rgtx_FLASH.ld`, y la estructura de carpetas (`cmake/`, `Src/`, `Startup/`).
 5. Verifica que existan los archivos:
+   - `cmake/gcc-arm-none-eabi.cmake`
+   - `cmake/vscode_generated.cmake`
    - `Src/main.c`
    - `CMakeLists.txt`
    - `stm32l476rgtx_FLASH.ld`
@@ -46,7 +48,7 @@ int main(void)
 - `#include <stdint.h>`: tipos estándar de ancho fijo.
 - `main()`: entra en bucle infinito para que el programa no termine.
 
-## 5. Renombrar `main.c` a `main.s` y ajustar CMakeLists.txt
+## 5. Renombrar `main.c` a `main.s` y ajustar `cmake/vscode_generated.cmake`
 
 1. En `Src/`, renombra `main.c` a `main.s`.
 2. Modifica `cmake/vscode_generated.cmake`:

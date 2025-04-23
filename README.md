@@ -24,10 +24,9 @@ En este módulo exploraremos los fundamentos de la arquitectura ARM Cortex‑M4 
 
 La guía se organiza en varios documentos Markdown que encontrarás en la carpeta `Doc/`:
 
-1. **[SETUP.md](Doc/SETUP.md):** Configuración del entorno y creación del proyecto vacío en VS Code.  
-2. **[ASM_CONFIG.md](Doc/ASM_CONFIG.md):** Renombrar `main`, modificar `CMakeLists.txt` e incluir soporte para archivos `.s`.  
-3. **[CODE_EXPLANATION.md](Doc/CODE_EXPLANATION.md):** Explicación detallada del código ensamblador de ejemplo, con comentarios y mejoras para los estudiantes.  
-4. **[DIAGRAMS.md](Doc/DIAGRAMS.md):** Diagramas de contexto, contenedor y componentes que ilustran la ejecución y recursos del procesador.
+1. **[SETUP.md](Doc/SETUP.md):** Configuración del entorno y creación del proyecto vacío en VS Code; Renombrar `main`, modificar `CMakeLists.txt`.
+2. **[ASM_CONFIG.md](Doc/ASM_CONFIG.md):** Guía de introducción al set the instrucciones de un procesador (ISA) y al lenguaje ensamblador.
+3. **[WORKSHOP.md](Doc/WORKSHOP.md):** Taller práctico de ensamblador e instrucciones básicas del ISA de ARM.
 
 > **Nota:** Cada documento incluye enlaces relativos para facilitar la navegación y referencias cruzadas.
 
