@@ -221,8 +221,10 @@ g_pfnVectors:
   .word	SWPMI1_IRQHandler            			/* SWPMI1 global interrupt                                             */
   .word	TSC_IRQHandler               			/* TSC global interrupt                                                */
   .word	LCD_IRQHandler               			/* LCD global interrupt                                                */
-  .word	AES_IRQHandler               			/* AES global interrupt                                                */
+  .word	0                            			/* Reserved                                                            */
   .word	RNG_IRQHandler               			/* RNG and HASH global interrupt                                       */
+  .word	FPU_IRQHandler               			/* Floating point interrupt                                            */
+  .word	CRS_IRQHandler               			/* HASH and CRS interrupt                                              */
   .size g_pfnVectors, .-g_pfnVectors
 
 /*******************************************************************************
@@ -497,11 +499,14 @@ g_pfnVectors:
   .weak	LCD_IRQHandler
 	.thumb_set	LCD_IRQHandler,Default_Handler
 
-  .weak	AES_IRQHandler
-	.thumb_set	AES_IRQHandler,Default_Handler
-
   .weak	RNG_IRQHandler
 	.thumb_set	RNG_IRQHandler,Default_Handler
+
+  .weak	FPU_IRQHandler
+	.thumb_set	FPU_IRQHandler,Default_Handler
+
+  .weak	CRS_IRQHandler
+	.thumb_set	CRS_IRQHandler,Default_Handler
 
 	.weak	SystemInit
 

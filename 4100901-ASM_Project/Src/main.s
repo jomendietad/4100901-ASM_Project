@@ -4,8 +4,8 @@
     .global main              @ Hacer visible la etiqueta main
 
     .equ MEM_LOC, 0x20000010  @ Dirección fija en SRAM para datos
-    .equ ID, 0x813017         @ Valor a decrementar
-    .equ DATE, 0x1017         @ Fecha de nacimiento
+    .equ ID, 0x11238908         @ Valor a decrementar
+    .equ DATE, 0x0115         @ Fecha de nacimiento
 
 main:
     @ Inicializar registros
