@@ -102,13 +102,6 @@ void uart_send(char c) {
     USART2->TDR = (uint8_t)c;
 }
 
-//Hace lo mismo que uart_send pero manda el string completo
-void uart_send_string(const char *str) {
-    while (*str) {
-        uart_send(*str++);
-    }
-}
-
 char uart_receive(void) {
     while (!(USART2->ISR & (1 << 5)));   // RXNE
     return (char)(USART2->RDR & 0xFF);
@@ -126,9 +119,10 @@ int main(void) {
     init_gpio_uart();
     init_uart();
     const char *msg = "UART listo!\r\n";
-    uart_send_string(msg);
-    //for (const char *p = msg; *p; ++p) uart_send(*p);
+    for (const char *p = msg; *p; ++p) uart_send(*p);
     while (1) {
-        __asm volatile("wfi");
+        // char byte = uart_receive();
+        // uart_send(byte);
+        // __asm volatile("wfi");
     }
 }
