@@ -1,0 +1,13 @@
+flowchart TD
+    Inicio(Inicio) --> InicializacionA[Se inicializa el Systic]
+    InicializacionA --> InicializacionB[Se inicializa el botón B1 como entrada en PC13]
+    InicializacionB --> InicializacionC[Se inicializa el LED LD2 en PA5 como salida]
+    InicializacionC --> Pregunta{¿Está presionado el botón B1?}
+    Pregunta --> |No| Pregunta
+    Pregunta --> |Si| Encendido[Encender el LED LD2]
+    Encendido --> Contador[Poner el delay_counter con valor de 3]
+    Contador --> Pregunta2{¿Es delay_counter cero?}
+    Pregunta2 --> |No| Resta[Restar 1 a delay_counter]
+    Resta --> Pregunta2
+    Pregunta2 --> |Si| Apagado[Apagar LED LD2]
+    Apagado --> Retorno[Retornar a main, entra en bucle infinito]
